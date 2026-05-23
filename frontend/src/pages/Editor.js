@@ -34,7 +34,9 @@ export default function Editor() {
 	};
 
 	const connectWebSocket = () => {
-		const ws = new WebSocket(`ws://127.0.0.1:8000/ws/${docId}`);
+		const ws = new WebSocket(
+			`wss://notesync-backend-9ot5.onrender.com/ws/${docId}`,
+		);
 		wsRef.current = ws;
 
 		ws.onopen = () => {
